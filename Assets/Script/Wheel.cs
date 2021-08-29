@@ -22,6 +22,7 @@ public class Wheel : MonoBehaviour
     public GameObject model;
     public float modelPosition = 0.6f;
     public float maxDeg = 30;
+    public float angleSpeedLife = 0.3f;
     public bool[] rotatable = new bool[4];
     public Vector3 rotateDir = new Vector3(-1, 0, 0);
 
@@ -187,6 +188,16 @@ public class Wheel : MonoBehaviour
         float asp = angleForce * turnAngle * Vector3.Dot(car.velocity, carBody.forward) * (two ? 1 : 0);
         if (asp < -maxAngleSpeed) asp = -maxAngleSpeed;
         if (asp > maxAngleSpeed) asp = maxAngleSpeed;
-        car.transform.Rotate(new Vector3(0, -1, 0) * asp * Time.fixedDeltaTime);
+        asp /= 10;
+        // car.angularVelocity = -carBody.up * asp * Time.fixedDeltaTime;
+        car.angularVelocity = (
+            Vector3.Dot(car.angularVelocity, carBody.right) * 
+            carBody.right + 
+            (-asp + Vector3.Dot(car.angularVelocity, carBody.right) * angleSpeedLife) * 
+            carBody.up +
+            Vector3.Dot(car.angularVelocity, carBody.forward) * 
+            carBody.forward
+        );
+        // car.AddTorque(-carBody.up * asp * car.mass);
     }
 }

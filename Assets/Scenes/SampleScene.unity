@@ -652,17 +652,18 @@ MonoBehaviour:
   maxBounceForce: 300
   car: {fileID: 1273763297}
   drag: {x: 0.4, y: 0.4, z: 0.96}
-  angleDrag: {x: 0.4, y: 0.8, z: 0.4}
+  angleDrag: {x: 0.4, y: 0.3, z: 0.4}
   force: 15
-  angleForce: 15
+  angleForce: 4
   turnSpeed: 1
-  maxAngleSpeed: 70
+  maxAngleSpeed: 20
   forceToMoveFromTurn: 0.05
   heightFix: 1.5
   maxSpeed: 5
   model: {fileID: 4305373738633067119, guid: e55dbfd467cedf74684ec26d9fe99d97, type: 3}
   modelPosition: 0.5
   maxDeg: 30
+  angleSpeedLife: 0.3
   rotatable: 01010000
   rotateDir: {x: -4, y: 0, z: 0}
 --- !u!23 &1678641944
@@ -811,10 +812,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 57d147fa5ee6a9a4bbcd94b53f8fc338, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 897fc648da7a45b41bbe2acf1186c1fd, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: d9babe6b2399927439e6fa01ba5f1de8, type: 2}
     - target: {fileID: -2045257923548263128, guid: 897fc648da7a45b41bbe2acf1186c1fd, type: 3}
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -1806680513116206669, guid: 897fc648da7a45b41bbe2acf1186c1fd, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 324853fbc66cd024ca083f2e701afa45, type: 2}
     - target: {fileID: -1599826595754709761, guid: 897fc648da7a45b41bbe2acf1186c1fd, type: 3}
       propertyPath: m_Layer
       value: 3
